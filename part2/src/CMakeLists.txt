@@ -1,0 +1,15 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+#增加一个可执行的二进制
+set(OpenCV_FOUND 1)
+FIND_PACKAGE(OpenCV 2.4.13 REQUIRED)
+FIND_PACKAGE(PCL REQUIRED COMPONENTS common io)
+
+ADD_DEFINITIONS(${PCL_DEFINITIONS})
+INCLUDE_DIRECTORIES(${PCL_INCLUDE_DIRS})
+LINK_LIBRARIES(${PCL_LIBRARY_DIRS})
+
+add_library(slam_transform slam_transform.cpp)
+target_link_libraries(slam_transform
+${OpenCV_LIBS}
+${PCL_LIBRARIES}
+)
