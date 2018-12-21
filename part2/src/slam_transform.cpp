@@ -36,8 +36,6 @@ void SlamTransform::Point2dTo3d(cv::Point3f &point)
     point.z = double(temp_point.z) / camera_factor_;
     point.x = (temp_point.x - camera_cx_) * point.z / camera_fx_;
     point.y = (temp_point.y - camera_cy_) * point.z / camera_fy_;
-    cout<< "temp_point:"<<temp_point<<endl;
-    cout<<"point:"<<point<<endl;
 }
 
 void SlamTransform::Point2dTo3d(cv::Mat &rgb_data, cv::Mat &depth_data, ushort m, ushort n, PointT &point)
