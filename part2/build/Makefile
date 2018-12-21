@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named slam_estimate
+
+# Build rule for target.
+slam_estimate: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 slam_estimate
+.PHONY : slam_estimate
+
+# fast build rule for target.
+slam_estimate/fast:
+	$(MAKE) -f src/CMakeFiles/slam_estimate.dir/build.make src/CMakeFiles/slam_estimate.dir/build
+.PHONY : slam_estimate/fast
+
+#=============================================================================
 # Target rules for targets named slam_transform
 
 # Build rule for target.
@@ -131,6 +144,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... slam_estimate"
 	@echo "... slam_transform"
 .PHONY : help
 

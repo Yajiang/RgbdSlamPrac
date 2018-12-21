@@ -111,6 +111,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+src/CMakeFiles/slam_estimate.dir/rule:
+	cd /home/eugene/slam/part2/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/slam_estimate.dir/rule
+.PHONY : src/CMakeFiles/slam_estimate.dir/rule
+
+# Convenience name for target.
+slam_estimate: src/CMakeFiles/slam_estimate.dir/rule
+
+.PHONY : slam_estimate
+
+# fast build rule for target.
+slam_estimate/fast:
+	cd /home/eugene/slam/part2/build && $(MAKE) -f src/CMakeFiles/slam_estimate.dir/build.make src/CMakeFiles/slam_estimate.dir/build
+.PHONY : slam_estimate/fast
+
+# Convenience name for target.
 src/CMakeFiles/slam_transform.dir/rule:
 	cd /home/eugene/slam/part2/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/slam_transform.dir/rule
 .PHONY : src/CMakeFiles/slam_transform.dir/rule
@@ -124,6 +139,33 @@ slam_transform: src/CMakeFiles/slam_transform.dir/rule
 slam_transform/fast:
 	cd /home/eugene/slam/part2/build && $(MAKE) -f src/CMakeFiles/slam_transform.dir/build.make src/CMakeFiles/slam_transform.dir/build
 .PHONY : slam_transform/fast
+
+slam_estimate.o: slam_estimate.cpp.o
+
+.PHONY : slam_estimate.o
+
+# target to build an object file
+slam_estimate.cpp.o:
+	cd /home/eugene/slam/part2/build && $(MAKE) -f src/CMakeFiles/slam_estimate.dir/build.make src/CMakeFiles/slam_estimate.dir/slam_estimate.cpp.o
+.PHONY : slam_estimate.cpp.o
+
+slam_estimate.i: slam_estimate.cpp.i
+
+.PHONY : slam_estimate.i
+
+# target to preprocess a source file
+slam_estimate.cpp.i:
+	cd /home/eugene/slam/part2/build && $(MAKE) -f src/CMakeFiles/slam_estimate.dir/build.make src/CMakeFiles/slam_estimate.dir/slam_estimate.cpp.i
+.PHONY : slam_estimate.cpp.i
+
+slam_estimate.s: slam_estimate.cpp.s
+
+.PHONY : slam_estimate.s
+
+# target to generate assembly for a file
+slam_estimate.cpp.s:
+	cd /home/eugene/slam/part2/build && $(MAKE) -f src/CMakeFiles/slam_estimate.dir/build.make src/CMakeFiles/slam_estimate.dir/slam_estimate.cpp.s
+.PHONY : slam_estimate.cpp.s
 
 slam_transform.o: slam_transform.cpp.o
 
@@ -160,7 +202,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... slam_estimate"
 	@echo "... slam_transform"
+	@echo "... slam_estimate.o"
+	@echo "... slam_estimate.i"
+	@echo "... slam_estimate.s"
 	@echo "... slam_transform.o"
 	@echo "... slam_transform.i"
 	@echo "... slam_transform.s"
