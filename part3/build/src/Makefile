@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eugene/slam/part2
+CMAKE_SOURCE_DIR = /home/eugene/slam/part3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eugene/slam/part2/build
+CMAKE_BINARY_DIR = /home/eugene/slam/part3/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/eugene/slam/part2/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/eugene/slam/part2/build/CMakeFiles /home/eugene/slam/part2/build/src/CMakeFiles/progress.marks
-	cd /home/eugene/slam/part2/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/eugene/slam/part2/build/CMakeFiles 0
+	cd /home/eugene/slam/part3/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/eugene/slam/part3/build/CMakeFiles /home/eugene/slam/part3/build/src/CMakeFiles/progress.marks
+	cd /home/eugene/slam/part3/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/eugene/slam/part3/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/eugene/slam/part2/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /home/eugene/slam/part3/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,37 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/eugene/slam/part2/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/eugene/slam/part3/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/eugene/slam/part2/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/eugene/slam/part3/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/eugene/slam/part2/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/eugene/slam/part3/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/slam_estimate.dir/rule:
-	cd /home/eugene/slam/part2/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/slam_estimate.dir/rule
-.PHONY : src/CMakeFiles/slam_estimate.dir/rule
-
-# Convenience name for target.
-slam_estimate: src/CMakeFiles/slam_estimate.dir/rule
-
-.PHONY : slam_estimate
-
-# fast build rule for target.
-slam_estimate/fast:
-	cd /home/eugene/slam/part2/build && $(MAKE) -f src/CMakeFiles/slam_estimate.dir/build.make src/CMakeFiles/slam_estimate.dir/build
-.PHONY : slam_estimate/fast
-
-# Convenience name for target.
 src/CMakeFiles/slam_transform.dir/rule:
-	cd /home/eugene/slam/part2/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/slam_transform.dir/rule
+	cd /home/eugene/slam/part3/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/slam_transform.dir/rule
 .PHONY : src/CMakeFiles/slam_transform.dir/rule
 
 # Convenience name for target.
@@ -137,8 +122,80 @@ slam_transform: src/CMakeFiles/slam_transform.dir/rule
 
 # fast build rule for target.
 slam_transform/fast:
-	cd /home/eugene/slam/part2/build && $(MAKE) -f src/CMakeFiles/slam_transform.dir/build.make src/CMakeFiles/slam_transform.dir/build
+	cd /home/eugene/slam/part3/build && $(MAKE) -f src/CMakeFiles/slam_transform.dir/build.make src/CMakeFiles/slam_transform.dir/build
 .PHONY : slam_transform/fast
+
+# Convenience name for target.
+src/CMakeFiles/slam_parameters.dir/rule:
+	cd /home/eugene/slam/part3/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/slam_parameters.dir/rule
+.PHONY : src/CMakeFiles/slam_parameters.dir/rule
+
+# Convenience name for target.
+slam_parameters: src/CMakeFiles/slam_parameters.dir/rule
+
+.PHONY : slam_parameters
+
+# fast build rule for target.
+slam_parameters/fast:
+	cd /home/eugene/slam/part3/build && $(MAKE) -f src/CMakeFiles/slam_parameters.dir/build.make src/CMakeFiles/slam_parameters.dir/build
+.PHONY : slam_parameters/fast
+
+# Convenience name for target.
+src/CMakeFiles/slam_estimate.dir/rule:
+	cd /home/eugene/slam/part3/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/slam_estimate.dir/rule
+.PHONY : src/CMakeFiles/slam_estimate.dir/rule
+
+# Convenience name for target.
+slam_estimate: src/CMakeFiles/slam_estimate.dir/rule
+
+.PHONY : slam_estimate
+
+# fast build rule for target.
+slam_estimate/fast:
+	cd /home/eugene/slam/part3/build && $(MAKE) -f src/CMakeFiles/slam_estimate.dir/build.make src/CMakeFiles/slam_estimate.dir/build
+.PHONY : slam_estimate/fast
+
+# Convenience name for target.
+src/CMakeFiles/join_point_cloud.dir/rule:
+	cd /home/eugene/slam/part3/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/join_point_cloud.dir/rule
+.PHONY : src/CMakeFiles/join_point_cloud.dir/rule
+
+# Convenience name for target.
+join_point_cloud: src/CMakeFiles/join_point_cloud.dir/rule
+
+.PHONY : join_point_cloud
+
+# fast build rule for target.
+join_point_cloud/fast:
+	cd /home/eugene/slam/part3/build && $(MAKE) -f src/CMakeFiles/join_point_cloud.dir/build.make src/CMakeFiles/join_point_cloud.dir/build
+.PHONY : join_point_cloud/fast
+
+join_point_cloud.o: join_point_cloud.cpp.o
+
+.PHONY : join_point_cloud.o
+
+# target to build an object file
+join_point_cloud.cpp.o:
+	cd /home/eugene/slam/part3/build && $(MAKE) -f src/CMakeFiles/join_point_cloud.dir/build.make src/CMakeFiles/join_point_cloud.dir/join_point_cloud.cpp.o
+.PHONY : join_point_cloud.cpp.o
+
+join_point_cloud.i: join_point_cloud.cpp.i
+
+.PHONY : join_point_cloud.i
+
+# target to preprocess a source file
+join_point_cloud.cpp.i:
+	cd /home/eugene/slam/part3/build && $(MAKE) -f src/CMakeFiles/join_point_cloud.dir/build.make src/CMakeFiles/join_point_cloud.dir/join_point_cloud.cpp.i
+.PHONY : join_point_cloud.cpp.i
+
+join_point_cloud.s: join_point_cloud.cpp.s
+
+.PHONY : join_point_cloud.s
+
+# target to generate assembly for a file
+join_point_cloud.cpp.s:
+	cd /home/eugene/slam/part3/build && $(MAKE) -f src/CMakeFiles/join_point_cloud.dir/build.make src/CMakeFiles/join_point_cloud.dir/join_point_cloud.cpp.s
+.PHONY : join_point_cloud.cpp.s
 
 slam_estimate.o: slam_estimate.cpp.o
 
@@ -146,7 +203,7 @@ slam_estimate.o: slam_estimate.cpp.o
 
 # target to build an object file
 slam_estimate.cpp.o:
-	cd /home/eugene/slam/part2/build && $(MAKE) -f src/CMakeFiles/slam_estimate.dir/build.make src/CMakeFiles/slam_estimate.dir/slam_estimate.cpp.o
+	cd /home/eugene/slam/part3/build && $(MAKE) -f src/CMakeFiles/slam_estimate.dir/build.make src/CMakeFiles/slam_estimate.dir/slam_estimate.cpp.o
 .PHONY : slam_estimate.cpp.o
 
 slam_estimate.i: slam_estimate.cpp.i
@@ -155,7 +212,7 @@ slam_estimate.i: slam_estimate.cpp.i
 
 # target to preprocess a source file
 slam_estimate.cpp.i:
-	cd /home/eugene/slam/part2/build && $(MAKE) -f src/CMakeFiles/slam_estimate.dir/build.make src/CMakeFiles/slam_estimate.dir/slam_estimate.cpp.i
+	cd /home/eugene/slam/part3/build && $(MAKE) -f src/CMakeFiles/slam_estimate.dir/build.make src/CMakeFiles/slam_estimate.dir/slam_estimate.cpp.i
 .PHONY : slam_estimate.cpp.i
 
 slam_estimate.s: slam_estimate.cpp.s
@@ -164,8 +221,35 @@ slam_estimate.s: slam_estimate.cpp.s
 
 # target to generate assembly for a file
 slam_estimate.cpp.s:
-	cd /home/eugene/slam/part2/build && $(MAKE) -f src/CMakeFiles/slam_estimate.dir/build.make src/CMakeFiles/slam_estimate.dir/slam_estimate.cpp.s
+	cd /home/eugene/slam/part3/build && $(MAKE) -f src/CMakeFiles/slam_estimate.dir/build.make src/CMakeFiles/slam_estimate.dir/slam_estimate.cpp.s
 .PHONY : slam_estimate.cpp.s
+
+slam_parameters.o: slam_parameters.cpp.o
+
+.PHONY : slam_parameters.o
+
+# target to build an object file
+slam_parameters.cpp.o:
+	cd /home/eugene/slam/part3/build && $(MAKE) -f src/CMakeFiles/slam_parameters.dir/build.make src/CMakeFiles/slam_parameters.dir/slam_parameters.cpp.o
+.PHONY : slam_parameters.cpp.o
+
+slam_parameters.i: slam_parameters.cpp.i
+
+.PHONY : slam_parameters.i
+
+# target to preprocess a source file
+slam_parameters.cpp.i:
+	cd /home/eugene/slam/part3/build && $(MAKE) -f src/CMakeFiles/slam_parameters.dir/build.make src/CMakeFiles/slam_parameters.dir/slam_parameters.cpp.i
+.PHONY : slam_parameters.cpp.i
+
+slam_parameters.s: slam_parameters.cpp.s
+
+.PHONY : slam_parameters.s
+
+# target to generate assembly for a file
+slam_parameters.cpp.s:
+	cd /home/eugene/slam/part3/build && $(MAKE) -f src/CMakeFiles/slam_parameters.dir/build.make src/CMakeFiles/slam_parameters.dir/slam_parameters.cpp.s
+.PHONY : slam_parameters.cpp.s
 
 slam_transform.o: slam_transform.cpp.o
 
@@ -173,7 +257,7 @@ slam_transform.o: slam_transform.cpp.o
 
 # target to build an object file
 slam_transform.cpp.o:
-	cd /home/eugene/slam/part2/build && $(MAKE) -f src/CMakeFiles/slam_transform.dir/build.make src/CMakeFiles/slam_transform.dir/slam_transform.cpp.o
+	cd /home/eugene/slam/part3/build && $(MAKE) -f src/CMakeFiles/slam_transform.dir/build.make src/CMakeFiles/slam_transform.dir/slam_transform.cpp.o
 .PHONY : slam_transform.cpp.o
 
 slam_transform.i: slam_transform.cpp.i
@@ -182,7 +266,7 @@ slam_transform.i: slam_transform.cpp.i
 
 # target to preprocess a source file
 slam_transform.cpp.i:
-	cd /home/eugene/slam/part2/build && $(MAKE) -f src/CMakeFiles/slam_transform.dir/build.make src/CMakeFiles/slam_transform.dir/slam_transform.cpp.i
+	cd /home/eugene/slam/part3/build && $(MAKE) -f src/CMakeFiles/slam_transform.dir/build.make src/CMakeFiles/slam_transform.dir/slam_transform.cpp.i
 .PHONY : slam_transform.cpp.i
 
 slam_transform.s: slam_transform.cpp.s
@@ -191,7 +275,7 @@ slam_transform.s: slam_transform.cpp.s
 
 # target to generate assembly for a file
 slam_transform.cpp.s:
-	cd /home/eugene/slam/part2/build && $(MAKE) -f src/CMakeFiles/slam_transform.dir/build.make src/CMakeFiles/slam_transform.dir/slam_transform.cpp.s
+	cd /home/eugene/slam/part3/build && $(MAKE) -f src/CMakeFiles/slam_transform.dir/build.make src/CMakeFiles/slam_transform.dir/slam_transform.cpp.s
 .PHONY : slam_transform.cpp.s
 
 # Help Target
@@ -202,11 +286,19 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... slam_estimate"
 	@echo "... slam_transform"
+	@echo "... slam_parameters"
+	@echo "... slam_estimate"
+	@echo "... join_point_cloud"
+	@echo "... join_point_cloud.o"
+	@echo "... join_point_cloud.i"
+	@echo "... join_point_cloud.s"
 	@echo "... slam_estimate.o"
 	@echo "... slam_estimate.i"
 	@echo "... slam_estimate.s"
+	@echo "... slam_parameters.o"
+	@echo "... slam_parameters.i"
+	@echo "... slam_parameters.s"
 	@echo "... slam_transform.o"
 	@echo "... slam_transform.i"
 	@echo "... slam_transform.s"
@@ -221,6 +313,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/eugene/slam/part2/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/eugene/slam/part3/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

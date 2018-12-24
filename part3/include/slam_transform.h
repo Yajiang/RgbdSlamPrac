@@ -22,10 +22,8 @@ class SlamTransform
     public:
     SlamTransform();
     ~SlamTransform();
-    // void GetCameraParam(double&,double&,double&,double&,double&);
-    void GetCameraParam(cv::Mat&);
-    void SetCameraParam(double,double,double,double,double);
-    void Point2dTo3d(cv::Point3f&);
+    void InitCameraParam();
+    void Point2dTo3d(const cv::Point3f&,cv::Point3f*);
     void Point2dTo3d(cv::Mat& rgb_data,cv::Mat& depth_data,ushort,ushort,PointT&);
     void ImageToPointCloud(cv::Mat& rgb_data,cv::Mat& depth_data,PointCloud::Ptr point_cloud_ptr);
     private:

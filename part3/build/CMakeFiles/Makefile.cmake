@@ -70,6 +70,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "src/CMakeFiles/slam_estimate.dir/DependInfo.cmake"
   "src/CMakeFiles/slam_transform.dir/DependInfo.cmake"
+  "src/CMakeFiles/slam_parameters.dir/DependInfo.cmake"
+  "src/CMakeFiles/slam_estimate.dir/DependInfo.cmake"
+  "src/CMakeFiles/join_point_cloud.dir/DependInfo.cmake"
   )

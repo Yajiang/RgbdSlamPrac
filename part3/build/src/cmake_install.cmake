@@ -1,4 +1,4 @@
-# Install script for directory: /home/eugene/slam/part2/src
+# Install script for directory: /home/eugene/slam/part3/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

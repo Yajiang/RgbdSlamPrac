@@ -1,43 +1,29 @@
 #include <slam_transform.h>
+#include <slam_parameters.h>
 
 SlamTransform::SlamTransform()
 {
-    SetCameraParam(1000,518,519,325.5, 253.5);
+    InitCameraParam();
 }
 SlamTransform::~SlamTransform()
 {
 }
-void SlamTransform::SetCameraParam(double factor, double fx, double fy, double cx, double cy)
+void SlamTransform::InitCameraParam()
 {
-    camera_factor_ = factor;
-    camera_fx_ = fx;
-    camera_fy_ = fy;
-    camera_cx_ = cx;
-    camera_cy_ = cy;
+    SlamParameters slam_parameters;
+    cv::Mat camera_intrinsic_matrix;
+    slam_parameters.GetCameraParameters(camera_intrinsic_matrix);
+    camera_factor_ = slam_parameters.GetScalingFactor();
+    camera_fx_ = camera_intrinsic_matrix.at<double>(0,0);
+    camera_fy_ = camera_intrinsic_matrix.at<double>(1,1);
+    camera_cx_ = camera_intrinsic_matrix.at<double>(0,2);
+    camera_cy_ = camera_intrinsic_matrix.at<double>(1,2);
 }
-// void SlamTransform::GetCameraParam(double &factor, double &fx, double &fy, double &cx, double &cy)
-// {
-//     factor = camera_factor_;
-//     fx = camera_fx_;
-//     fy = camera_fy_;
-//     cx = camera_c
-//     cy = camera_cy_;
-// }
-void SlamTransform::GetCameraParam(cv::Mat &camera_matrix)
+void SlamTransform::Point2dTo3d(const cv::Point3f &point_3d,cv::Point3f* point_space)
 {
-    double c[3][3] = {{camera_fx_, 0, camera_cx_}, {0, camera_fy_, camera_cy_}, {0, 0, 1}};
-    cv::Mat temp_matrix(3, 3, CV_64F, c);
-    cout << temp_matrix << endl;
-    camera_matrix = temp_matrix.clone();
-}
-void SlamTransform::Point2dTo3d(cv::Point3f &point)
-{
-    cv::Point3f temp_point(point.x,point.y,point.z);
-    point.z = double(temp_point.z) / camera_factor_;
-    point.x = (temp_point.x - camera_cx_) * point.z / camera_fx_;
-    point.y = (temp_point.y - camera_cy_) * point.z / camera_fy_;
-    cout<< "temp_point:"<<temp_point<<endl;
-    cout<<"point:"<<point<<endl;
+    point_space->z = double(point_3d.z) / camera_factor_;
+    point_space->x = (point_3d.x - camera_cx_) * point_space->z / camera_fx_;
+    point_space->y = (point_3d.y - camera_cy_) * point_space->z / camera_fy_;
 }
 
 void SlamTransform::Point2dTo3d(cv::Mat &rgb_data, cv::Mat &depth_data, ushort m, ushort n, PointT &point)

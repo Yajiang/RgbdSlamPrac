@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eugene/slam/part2
+CMAKE_SOURCE_DIR = /home/eugene/slam/part3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eugene/slam/part2/build
+CMAKE_BINARY_DIR = /home/eugene/slam/part3/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/eugene/slam/part2/build/CMakeFiles /home/eugene/slam/part2/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/eugene/slam/part3/build/CMakeFiles /home/eugene/slam/part3/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/eugene/slam/part2/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/eugene/slam/part3/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,6 +111,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named slam_transform
+
+# Build rule for target.
+slam_transform: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 slam_transform
+.PHONY : slam_transform
+
+# fast build rule for target.
+slam_transform/fast:
+	$(MAKE) -f src/CMakeFiles/slam_transform.dir/build.make src/CMakeFiles/slam_transform.dir/build
+.PHONY : slam_transform/fast
+
+#=============================================================================
+# Target rules for targets named slam_parameters
+
+# Build rule for target.
+slam_parameters: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 slam_parameters
+.PHONY : slam_parameters
+
+# fast build rule for target.
+slam_parameters/fast:
+	$(MAKE) -f src/CMakeFiles/slam_parameters.dir/build.make src/CMakeFiles/slam_parameters.dir/build
+.PHONY : slam_parameters/fast
+
+#=============================================================================
 # Target rules for targets named slam_estimate
 
 # Build rule for target.
@@ -124,17 +150,17 @@ slam_estimate/fast:
 .PHONY : slam_estimate/fast
 
 #=============================================================================
-# Target rules for targets named slam_transform
+# Target rules for targets named join_point_cloud
 
 # Build rule for target.
-slam_transform: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 slam_transform
-.PHONY : slam_transform
+join_point_cloud: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 join_point_cloud
+.PHONY : join_point_cloud
 
 # fast build rule for target.
-slam_transform/fast:
-	$(MAKE) -f src/CMakeFiles/slam_transform.dir/build.make src/CMakeFiles/slam_transform.dir/build
-.PHONY : slam_transform/fast
+join_point_cloud/fast:
+	$(MAKE) -f src/CMakeFiles/join_point_cloud.dir/build.make src/CMakeFiles/join_point_cloud.dir/build
+.PHONY : join_point_cloud/fast
 
 # Help Target
 help:
@@ -144,8 +170,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... slam_estimate"
 	@echo "... slam_transform"
+	@echo "... slam_parameters"
+	@echo "... slam_estimate"
+	@echo "... join_point_cloud"
 .PHONY : help
 
 

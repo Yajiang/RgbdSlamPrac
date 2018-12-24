@@ -30,8 +30,6 @@ int main(int argc, char const *argv[])
     rgb = cv::imread("../data/rgb.png");
     depth = cv::imread("../data/depth.png",-1);
     PointCloud::Ptr cloud (new PointCloud);
-    cout <<"rows:"<<depth.rows<<endl;
-    cout <<"cols"<<depth.cols<<endl;
     for (int m = 0; m < depth.rows; m++)
         for (int n = 0; n < depth.cols; n++)
         {

@@ -1,0 +1,12 @@
+%YAML:1.0
+version: "0.0"
+FeatureDetector: GridSIFT
+DescriptorExtractor: SIFT
+camera_intrinsic_matrix: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [ 518., 0., 3.2550000000000000e+02, 0., 519.,
+       2.5350000000000000e+02, 0., 0., 1. ]
+scaling_factor: 1000
+good_match_threshold: 4

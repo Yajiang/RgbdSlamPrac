@@ -3,6 +3,11 @@
         "deque": "cpp",
         "vector": "cpp",
         "newstdvector": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "array": "cpp",
+        "bitset": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp",
+        "valarray": "cpp"
     }
 }

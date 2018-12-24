@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eugene/slam/part2
+CMAKE_SOURCE_DIR = /home/eugene/slam/part3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eugene/slam/part2/build
+CMAKE_BINARY_DIR = /home/eugene/slam/part3/build
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/slam_estimate.dir/depend.make
@@ -59,16 +59,16 @@ include src/CMakeFiles/slam_estimate.dir/flags.make
 
 src/CMakeFiles/slam_estimate.dir/slam_estimate.cpp.o: src/CMakeFiles/slam_estimate.dir/flags.make
 src/CMakeFiles/slam_estimate.dir/slam_estimate.cpp.o: ../src/slam_estimate.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eugene/slam/part2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/slam_estimate.dir/slam_estimate.cpp.o"
-	cd /home/eugene/slam/part2/build/src && g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/slam_estimate.dir/slam_estimate.cpp.o -c /home/eugene/slam/part2/src/slam_estimate.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eugene/slam/part3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/slam_estimate.dir/slam_estimate.cpp.o"
+	cd /home/eugene/slam/part3/build/src && g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/slam_estimate.dir/slam_estimate.cpp.o -c /home/eugene/slam/part3/src/slam_estimate.cpp
 
 src/CMakeFiles/slam_estimate.dir/slam_estimate.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/slam_estimate.dir/slam_estimate.cpp.i"
-	cd /home/eugene/slam/part2/build/src && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eugene/slam/part2/src/slam_estimate.cpp > CMakeFiles/slam_estimate.dir/slam_estimate.cpp.i
+	cd /home/eugene/slam/part3/build/src && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eugene/slam/part3/src/slam_estimate.cpp > CMakeFiles/slam_estimate.dir/slam_estimate.cpp.i
 
 src/CMakeFiles/slam_estimate.dir/slam_estimate.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/slam_estimate.dir/slam_estimate.cpp.s"
-	cd /home/eugene/slam/part2/build/src && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eugene/slam/part2/src/slam_estimate.cpp -o CMakeFiles/slam_estimate.dir/slam_estimate.cpp.s
+	cd /home/eugene/slam/part3/build/src && g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eugene/slam/part3/src/slam_estimate.cpp -o CMakeFiles/slam_estimate.dir/slam_estimate.cpp.s
 
 src/CMakeFiles/slam_estimate.dir/slam_estimate.cpp.o.requires:
 
@@ -88,77 +88,15 @@ slam_estimate_OBJECTS = \
 # External object files for target slam_estimate
 slam_estimate_EXTERNAL_OBJECTS =
 
-../bin/slam_estimate: src/CMakeFiles/slam_estimate.dir/slam_estimate.cpp.o
-../bin/slam_estimate: src/CMakeFiles/slam_estimate.dir/build.make
-../bin/slam_estimate: ../lib/libslam_transform.a
-../bin/slam_estimate: /usr/local/lib/libopencv_videostab.so.2.4.13
-../bin/slam_estimate: /usr/local/lib/libopencv_ts.a
-../bin/slam_estimate: /usr/local/lib/libopencv_superres.so.2.4.13
-../bin/slam_estimate: /usr/local/lib/libopencv_stitching.so.2.4.13
-../bin/slam_estimate: /usr/local/lib/libopencv_contrib.so.2.4.13
-../bin/slam_estimate: /usr/lib/libpcl_io.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libboost_system.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libpthread.so
-../bin/slam_estimate: /usr/lib/libOpenNI.so
-../bin/slam_estimate: /usr/lib/libOpenNI2.so
-../bin/slam_estimate: /usr/lib/libvtkGenericFiltering.so.5.10.1
-../bin/slam_estimate: /usr/lib/libvtkGeovis.so.5.10.1
-../bin/slam_estimate: /usr/lib/libvtkCharts.so.5.10.1
-../bin/slam_estimate: /usr/local/lib/libopencv_nonfree.so.2.4.13
-../bin/slam_estimate: /usr/local/lib/libopencv_ocl.so.2.4.13
-../bin/slam_estimate: /usr/local/lib/libopencv_gpu.so.2.4.13
-../bin/slam_estimate: /usr/local/lib/libopencv_photo.so.2.4.13
-../bin/slam_estimate: /usr/local/lib/libopencv_objdetect.so.2.4.13
-../bin/slam_estimate: /usr/local/lib/libopencv_legacy.so.2.4.13
-../bin/slam_estimate: /usr/local/lib/libopencv_video.so.2.4.13
-../bin/slam_estimate: /usr/local/lib/libopencv_ml.so.2.4.13
-../bin/slam_estimate: /usr/local/lib/libopencv_calib3d.so.2.4.13
-../bin/slam_estimate: /usr/local/lib/libopencv_features2d.so.2.4.13
-../bin/slam_estimate: /usr/local/lib/libopencv_highgui.so.2.4.13
-../bin/slam_estimate: /usr/local/lib/libopencv_imgproc.so.2.4.13
-../bin/slam_estimate: /usr/local/lib/libopencv_flann.so.2.4.13
-../bin/slam_estimate: /usr/local/lib/libopencv_core.so.2.4.13
-../bin/slam_estimate: /usr/lib/libpcl_octree.so
-../bin/slam_estimate: /usr/lib/libpcl_common.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libboost_system.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-../bin/slam_estimate: /usr/lib/x86_64-linux-gnu/libpthread.so
-../bin/slam_estimate: /usr/lib/libOpenNI.so
-../bin/slam_estimate: /usr/lib/libOpenNI2.so
-../bin/slam_estimate: /usr/lib/libvtkViews.so.5.10.1
-../bin/slam_estimate: /usr/lib/libvtkInfovis.so.5.10.1
-../bin/slam_estimate: /usr/lib/libvtkWidgets.so.5.10.1
-../bin/slam_estimate: /usr/lib/libvtkVolumeRendering.so.5.10.1
-../bin/slam_estimate: /usr/lib/libvtkHybrid.so.5.10.1
-../bin/slam_estimate: /usr/lib/libvtkParallel.so.5.10.1
-../bin/slam_estimate: /usr/lib/libvtkRendering.so.5.10.1
-../bin/slam_estimate: /usr/lib/libvtkImaging.so.5.10.1
-../bin/slam_estimate: /usr/lib/libvtkGraphics.so.5.10.1
-../bin/slam_estimate: /usr/lib/libvtkIO.so.5.10.1
-../bin/slam_estimate: /usr/lib/libvtkFiltering.so.5.10.1
-../bin/slam_estimate: /usr/lib/libvtkCommon.so.5.10.1
-../bin/slam_estimate: /usr/lib/libvtksys.so.5.10.1
-../bin/slam_estimate: src/CMakeFiles/slam_estimate.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eugene/slam/part2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/slam_estimate"
-	cd /home/eugene/slam/part2/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/slam_estimate.dir/link.txt --verbose=$(VERBOSE)
+../lib/libslam_estimate.a: src/CMakeFiles/slam_estimate.dir/slam_estimate.cpp.o
+../lib/libslam_estimate.a: src/CMakeFiles/slam_estimate.dir/build.make
+../lib/libslam_estimate.a: src/CMakeFiles/slam_estimate.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eugene/slam/part3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../lib/libslam_estimate.a"
+	cd /home/eugene/slam/part3/build/src && $(CMAKE_COMMAND) -P CMakeFiles/slam_estimate.dir/cmake_clean_target.cmake
+	cd /home/eugene/slam/part3/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/slam_estimate.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-src/CMakeFiles/slam_estimate.dir/build: ../bin/slam_estimate
+src/CMakeFiles/slam_estimate.dir/build: ../lib/libslam_estimate.a
 
 .PHONY : src/CMakeFiles/slam_estimate.dir/build
 
@@ -167,10 +105,10 @@ src/CMakeFiles/slam_estimate.dir/requires: src/CMakeFiles/slam_estimate.dir/slam
 .PHONY : src/CMakeFiles/slam_estimate.dir/requires
 
 src/CMakeFiles/slam_estimate.dir/clean:
-	cd /home/eugene/slam/part2/build/src && $(CMAKE_COMMAND) -P CMakeFiles/slam_estimate.dir/cmake_clean.cmake
+	cd /home/eugene/slam/part3/build/src && $(CMAKE_COMMAND) -P CMakeFiles/slam_estimate.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/slam_estimate.dir/clean
 
 src/CMakeFiles/slam_estimate.dir/depend:
-	cd /home/eugene/slam/part2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eugene/slam/part2 /home/eugene/slam/part2/src /home/eugene/slam/part2/build /home/eugene/slam/part2/build/src /home/eugene/slam/part2/build/src/CMakeFiles/slam_estimate.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/eugene/slam/part3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eugene/slam/part3 /home/eugene/slam/part3/src /home/eugene/slam/part3/build /home/eugene/slam/part3/build/src /home/eugene/slam/part3/build/src/CMakeFiles/slam_estimate.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/slam_estimate.dir/depend
 

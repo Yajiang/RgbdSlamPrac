@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libslam_parameters.a  CMakeFiles/slam_parameters.dir/slam_parameters.cpp.o
+/usr/bin/ranlib ../../lib/libslam_parameters.a

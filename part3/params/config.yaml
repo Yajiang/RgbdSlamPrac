@@ -1,5 +1,0 @@
-# 特征提取方法
-FeatureDetector : 'GridSIFT'
-# 描述子方法
-DescriptorExtractor : 'SIFT'
-# 相机内参
