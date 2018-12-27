@@ -25,7 +25,7 @@ class SlamTransform
     void InitCameraParam();
     void Point2dTo3d(const cv::Point3f&,cv::Point3f*);
     void Point2dTo3d(cv::Mat& rgb_data,cv::Mat& depth_data,ushort,ushort,PointT&);
-    void ImageToPointCloud(cv::Mat& rgb_data,cv::Mat& depth_data,PointCloud::Ptr point_cloud_ptr);
+    void ImageToPointCloud(const cv::Mat& rgb_data,const cv::Mat& depth_data,PointCloud::Ptr point_cloud_ptr);
     private:
     //Camera param
     double camera_factor_;

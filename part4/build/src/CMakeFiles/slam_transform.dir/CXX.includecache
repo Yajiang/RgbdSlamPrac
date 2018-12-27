@@ -32,9 +32,9 @@ pcl-1.9/pcl/io/pcd_io.h
 
 /home/eugene/slam/part4/src/slam_transform.cpp
 slam_transform.h
--
+/home/eugene/slam/part4/src/slam_transform.h
 slam_parameters.h
--
+/home/eugene/slam/part4/src/slam_parameters.h
 
 /usr/include/eigen3/Eigen/Cholesky
 Core

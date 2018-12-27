@@ -4,13 +4,15 @@
 #include <string>
 #include <iostream>
 //第三方库文件
-#include <eigen2/Eigen/src/Geometry/Transform.h>
+#include <opencv2/core.hpp>
+#include <eigen3/Eigen/Core>
+#include <eigen3/Eigen/Geometry>
 #include <pcl-1.9/pcl/filters/voxel_grid.h> 
 //项目内文件
 
 using namespace std;
 
-JoinPointcloud::CvMat2Eigen(const cv::Mat &rotation_vector, const cv::Mat &translation_vector, Eigen::Isometry3d *transform)
+void JoinPointcloud::CvMat2Eigen(const cv::Mat &rotation_vector, const cv::Mat &translation_vector, Eigen::Isometry3d *transform)
 {
     cv::Mat rotation_matrix;
     cv::Rodrigues(rotation_vector, rotation_matrix);
@@ -23,7 +25,7 @@ JoinPointcloud::CvMat2Eigen(const cv::Mat &rotation_vector, const cv::Mat &trans
     (*transform)(2, 3) = translation_vector.at<double>(2, 0);
     cout << (*transform).matrix() << endl;
 }
-JoinPointcloud::CombinePointcloud(const PointCloud::Ptr input_cloud, const Frame &frame,const Eigen::Isometry3d& transfrom,PointCloud::Ptr output_cloud)
+void JoinPointcloud::CombinePointcloud(const PointCloud::Ptr input_cloud, const Frame &frame,const Eigen::Isometry3d& transfrom,PointCloud::Ptr output_cloud)
 {
     SlamTransform slam_transform;
     PointCloud::Ptr whole_cloud(new PointCloud());
@@ -50,7 +52,7 @@ JoinPointcloud::CombinePointcloud(const PointCloud::Ptr input_cloud, const Frame
     voxel.setInputCloud(whole_cloud);
     voxel.filter(*output_cloud);
 }
-JoinPointcloud::ReadFrame(const int index, Frame *frame)
+void JoinPointcloud::ReadFrame(const int index, Frame *frame)
 {
     string folder_name = "../data/rgb_png/";
     string file_name = folder_name + to_string(index);
@@ -59,4 +61,8 @@ JoinPointcloud::ReadFrame(const int index, Frame *frame)
     string folder_name = "../data/depth_png/";
     string file_name = folder_name + to_string(index);
     frame->depth_data = cv::imread("../data/depth1.png", -1);
+}
+double JoinPointcloud::NormDistance(cv::Mat& rotation_vec,cv::Mat& translation_vec)
+{
+    return fabs(min(cv::norm(rotation_vec),2*M_PI-cv::norm(rotation_vec))+fabs(cv::norm(translation_vec)));
 }

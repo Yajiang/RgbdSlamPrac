@@ -10,7 +10,7 @@ struct Frame
 {
     cv::Mat rgb_data, depth_data;
     cv::Mat descriptor;
-    vector <cv::KeyPoint> key_points;
+    vector<cv::KeyPoint> key_points;
 };
 
 struct PnpResult
@@ -19,11 +19,11 @@ struct PnpResult
     int inliers;
 };
 
-
 class SlamEstimate
 {
-   SlamEstimate();
-   ~SlamEstimate();
-   void ComputeKeyPointAndDescriptor(Frame&);
-   PnpResult EstimateMotion(Frame& frame1,Frame& frame2);
+  public:
+    SlamEstimate();
+    ~SlamEstimate();
+    void ComputeKeyPointAndDescriptor(Frame &);
+    PnpResult EstimateMotion(Frame &frame1, Frame &frame2);
 };

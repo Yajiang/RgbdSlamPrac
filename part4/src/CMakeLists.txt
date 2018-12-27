@@ -18,7 +18,6 @@ ${PCL_LIBRARIES}
 
 add_library(slam_parameters slam_parameters.cpp)
 target_link_libraries(slam_parameters
-slam_transform
 ${OpenCV_LIBS}
 ${PCL_LIBRARIES}
 )

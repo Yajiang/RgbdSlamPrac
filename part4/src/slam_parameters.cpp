@@ -68,8 +68,10 @@ void SlamParameters::ResetParameters()
     fs<<"good_match_threshold"<<4;
     fs.release();
 }
-void SlamParameters::ReadData(string param_name, string param_value)
+string SlamParameters::ReadData(string param_name)
 {
+    string param_value;
     cv::FileStorage fs("../params/config.yml",cv::FileStorage::READ);
     fs[param_name]>>param_value;
+    return param_value;
 }
