@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../lib/libslam_transform.a  CMakeFiles/slam_transform.dir/slam_transform.cpp.o
-/usr/bin/ranlib ../../lib/libslam_transform.a
