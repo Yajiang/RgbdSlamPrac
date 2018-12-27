@@ -1,4 +1,10 @@
-#include <slam_parameters.h>
+//相关头文件
+#include "slam_parameters.h"
+//C/C++系统文件
+
+//第三方库文件
+
+//项目内文件
 
 using namespace std;
 SlamParameters::SlamParameters()
@@ -61,4 +67,9 @@ void SlamParameters::ResetParameters()
     fs<<"scaling_factor"<<1000;
     fs<<"good_match_threshold"<<4;
     fs.release();
+}
+void SlamParameters::ReadData(string param_name, string param_value)
+{
+    cv::FileStorage fs("../params/config.yml",cv::FileStorage::READ);
+    fs[param_name]>>param_value;
 }

@@ -1,5 +1,5 @@
 *.png
 
-build/*
-bin/*
-lib/*
+build/
+bin/
+lib/

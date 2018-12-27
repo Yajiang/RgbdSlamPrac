@@ -124,6 +124,19 @@ slam_transform/fast:
 .PHONY : slam_transform/fast
 
 #=============================================================================
+# Target rules for targets named visual_odometry
+
+# Build rule for target.
+visual_odometry: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 visual_odometry
+.PHONY : visual_odometry
+
+# fast build rule for target.
+visual_odometry/fast:
+	$(MAKE) -f src/CMakeFiles/visual_odometry.dir/build.make src/CMakeFiles/visual_odometry.dir/build
+.PHONY : visual_odometry/fast
+
+#=============================================================================
 # Target rules for targets named slam_parameters
 
 # Build rule for target.
@@ -171,6 +184,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... slam_transform"
+	@echo "... visual_odometry"
 	@echo "... slam_parameters"
 	@echo "... slam_estimate"
 	@echo "... join_point_cloud"

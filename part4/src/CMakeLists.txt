@@ -29,9 +29,14 @@ slam_parameters
 ${OpenCV_LIBS}
 ${PCL_LIBRARIES}
 )
-add_executable(join_point_cloud join_point_cloud.cpp)
+add_library(join_point_cloud join_point_cloud.cpp)
 target_link_libraries(join_point_cloud
 slam_estimate
+${OpenCV_LIBS}
+${PCL_LIBRARIES}
+)
+add_executable(visual_odometry visual_odometry.cpp)
+target_link_libraries(visual_odometry
 ${OpenCV_LIBS}
 ${PCL_LIBRARIES}
 )

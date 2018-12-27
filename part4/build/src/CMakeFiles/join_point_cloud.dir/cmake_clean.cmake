@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../bin/join_point_cloud.pdb"
-  "../../bin/join_point_cloud"
+  "../../lib/libjoin_point_cloud.pdb"
+  "../../lib/libjoin_point_cloud.a"
 )
 
 # Per-language clean rules from dependency scanning.

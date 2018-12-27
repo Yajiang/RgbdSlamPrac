@@ -126,6 +126,21 @@ slam_transform/fast:
 .PHONY : slam_transform/fast
 
 # Convenience name for target.
+src/CMakeFiles/visual_odometry.dir/rule:
+	cd /home/eugene/slam/part4/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/visual_odometry.dir/rule
+.PHONY : src/CMakeFiles/visual_odometry.dir/rule
+
+# Convenience name for target.
+visual_odometry: src/CMakeFiles/visual_odometry.dir/rule
+
+.PHONY : visual_odometry
+
+# fast build rule for target.
+visual_odometry/fast:
+	cd /home/eugene/slam/part4/build && $(MAKE) -f src/CMakeFiles/visual_odometry.dir/build.make src/CMakeFiles/visual_odometry.dir/build
+.PHONY : visual_odometry/fast
+
+# Convenience name for target.
 src/CMakeFiles/slam_parameters.dir/rule:
 	cd /home/eugene/slam/part4/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/slam_parameters.dir/rule
 .PHONY : src/CMakeFiles/slam_parameters.dir/rule
@@ -251,6 +266,33 @@ slam_transform.cpp.s:
 	cd /home/eugene/slam/part4/build && $(MAKE) -f src/CMakeFiles/slam_transform.dir/build.make src/CMakeFiles/slam_transform.dir/slam_transform.cpp.s
 .PHONY : slam_transform.cpp.s
 
+visual_odometry.o: visual_odometry.cpp.o
+
+.PHONY : visual_odometry.o
+
+# target to build an object file
+visual_odometry.cpp.o:
+	cd /home/eugene/slam/part4/build && $(MAKE) -f src/CMakeFiles/visual_odometry.dir/build.make src/CMakeFiles/visual_odometry.dir/visual_odometry.cpp.o
+.PHONY : visual_odometry.cpp.o
+
+visual_odometry.i: visual_odometry.cpp.i
+
+.PHONY : visual_odometry.i
+
+# target to preprocess a source file
+visual_odometry.cpp.i:
+	cd /home/eugene/slam/part4/build && $(MAKE) -f src/CMakeFiles/visual_odometry.dir/build.make src/CMakeFiles/visual_odometry.dir/visual_odometry.cpp.i
+.PHONY : visual_odometry.cpp.i
+
+visual_odometry.s: visual_odometry.cpp.s
+
+.PHONY : visual_odometry.s
+
+# target to generate assembly for a file
+visual_odometry.cpp.s:
+	cd /home/eugene/slam/part4/build && $(MAKE) -f src/CMakeFiles/visual_odometry.dir/build.make src/CMakeFiles/visual_odometry.dir/visual_odometry.cpp.s
+.PHONY : visual_odometry.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -260,6 +302,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... slam_transform"
+	@echo "... visual_odometry"
 	@echo "... slam_parameters"
 	@echo "... slam_estimate"
 	@echo "... join_point_cloud"
@@ -272,6 +315,9 @@ help:
 	@echo "... slam_transform.o"
 	@echo "... slam_transform.i"
 	@echo "... slam_transform.s"
+	@echo "... visual_odometry.o"
+	@echo "... visual_odometry.i"
+	@echo "... visual_odometry.s"
 .PHONY : help
 
 

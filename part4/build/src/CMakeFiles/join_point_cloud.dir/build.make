@@ -63,79 +63,14 @@ join_point_cloud_OBJECTS =
 # External object files for target join_point_cloud
 join_point_cloud_EXTERNAL_OBJECTS =
 
-../bin/join_point_cloud: src/CMakeFiles/join_point_cloud.dir/build.make
-../bin/join_point_cloud: ../lib/libslam_estimate.a
-../bin/join_point_cloud: /usr/local/lib/libopencv_ts.a
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libboost_system.so
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libpthread.so
-../bin/join_point_cloud: /usr/lib/libOpenNI.so
-../bin/join_point_cloud: /usr/lib/libOpenNI2.so
-../bin/join_point_cloud: ../lib/libslam_parameters.a
-../bin/join_point_cloud: ../lib/libslam_transform.a
-../bin/join_point_cloud: /usr/local/lib/libopencv_videostab.so.2.4.13
-../bin/join_point_cloud: /usr/local/lib/libopencv_ts.a
-../bin/join_point_cloud: /usr/local/lib/libopencv_superres.so.2.4.13
-../bin/join_point_cloud: /usr/local/lib/libopencv_stitching.so.2.4.13
-../bin/join_point_cloud: /usr/local/lib/libopencv_contrib.so.2.4.13
-../bin/join_point_cloud: /usr/local/lib/libopencv_nonfree.so.2.4.13
-../bin/join_point_cloud: /usr/local/lib/libopencv_ocl.so.2.4.13
-../bin/join_point_cloud: /usr/local/lib/libopencv_gpu.so.2.4.13
-../bin/join_point_cloud: /usr/local/lib/libopencv_photo.so.2.4.13
-../bin/join_point_cloud: /usr/local/lib/libopencv_objdetect.so.2.4.13
-../bin/join_point_cloud: /usr/local/lib/libopencv_legacy.so.2.4.13
-../bin/join_point_cloud: /usr/local/lib/libopencv_video.so.2.4.13
-../bin/join_point_cloud: /usr/local/lib/libopencv_ml.so.2.4.13
-../bin/join_point_cloud: /usr/local/lib/libopencv_calib3d.so.2.4.13
-../bin/join_point_cloud: /usr/local/lib/libopencv_features2d.so.2.4.13
-../bin/join_point_cloud: /usr/local/lib/libopencv_highgui.so.2.4.13
-../bin/join_point_cloud: /usr/local/lib/libopencv_imgproc.so.2.4.13
-../bin/join_point_cloud: /usr/local/lib/libopencv_flann.so.2.4.13
-../bin/join_point_cloud: /usr/local/lib/libopencv_core.so.2.4.13
-../bin/join_point_cloud: /usr/local/lib/libpcl_io.so
-../bin/join_point_cloud: /usr/local/lib/libpcl_octree.so
-../bin/join_point_cloud: /usr/local/lib/libpcl_common.so
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libboost_system.so
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-../bin/join_point_cloud: /usr/lib/x86_64-linux-gnu/libpthread.so
-../bin/join_point_cloud: /usr/lib/libOpenNI.so
-../bin/join_point_cloud: /usr/lib/libOpenNI2.so
-../bin/join_point_cloud: /usr/lib/libvtkGenericFiltering.so.5.10.1
-../bin/join_point_cloud: /usr/lib/libvtkGeovis.so.5.10.1
-../bin/join_point_cloud: /usr/lib/libvtkCharts.so.5.10.1
-../bin/join_point_cloud: /usr/lib/libvtkViews.so.5.10.1
-../bin/join_point_cloud: /usr/lib/libvtkInfovis.so.5.10.1
-../bin/join_point_cloud: /usr/lib/libvtkWidgets.so.5.10.1
-../bin/join_point_cloud: /usr/lib/libvtkVolumeRendering.so.5.10.1
-../bin/join_point_cloud: /usr/lib/libvtkHybrid.so.5.10.1
-../bin/join_point_cloud: /usr/lib/libvtkParallel.so.5.10.1
-../bin/join_point_cloud: /usr/lib/libvtkRendering.so.5.10.1
-../bin/join_point_cloud: /usr/lib/libvtkImaging.so.5.10.1
-../bin/join_point_cloud: /usr/lib/libvtkGraphics.so.5.10.1
-../bin/join_point_cloud: /usr/lib/libvtkIO.so.5.10.1
-../bin/join_point_cloud: /usr/lib/libvtkFiltering.so.5.10.1
-../bin/join_point_cloud: /usr/lib/libvtkCommon.so.5.10.1
-../bin/join_point_cloud: /usr/lib/libvtksys.so.5.10.1
-../bin/join_point_cloud: src/CMakeFiles/join_point_cloud.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eugene/slam/part4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX executable ../../bin/join_point_cloud"
+../lib/libjoin_point_cloud.a: src/CMakeFiles/join_point_cloud.dir/build.make
+../lib/libjoin_point_cloud.a: src/CMakeFiles/join_point_cloud.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eugene/slam/part4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX static library ../../lib/libjoin_point_cloud.a"
+	cd /home/eugene/slam/part4/build/src && $(CMAKE_COMMAND) -P CMakeFiles/join_point_cloud.dir/cmake_clean_target.cmake
 	cd /home/eugene/slam/part4/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/join_point_cloud.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-src/CMakeFiles/join_point_cloud.dir/build: ../bin/join_point_cloud
+src/CMakeFiles/join_point_cloud.dir/build: ../lib/libjoin_point_cloud.a
 
 .PHONY : src/CMakeFiles/join_point_cloud.dir/build
 

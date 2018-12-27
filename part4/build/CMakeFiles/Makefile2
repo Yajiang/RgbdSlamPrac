@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /home/eugene/slam/part4/build
 
 # Convenience name for "all" pass in the directory.
 src/all: src/CMakeFiles/slam_transform.dir/all
+src/all: src/CMakeFiles/visual_odometry.dir/all
 src/all: src/CMakeFiles/slam_parameters.dir/all
 src/all: src/CMakeFiles/slam_estimate.dir/all
 src/all: src/CMakeFiles/join_point_cloud.dir/all
@@ -72,6 +73,7 @@ src/all: src/CMakeFiles/join_point_cloud.dir/all
 
 # Convenience name for "clean" pass in the directory.
 src/clean: src/CMakeFiles/slam_transform.dir/clean
+src/clean: src/CMakeFiles/visual_odometry.dir/clean
 src/clean: src/CMakeFiles/slam_parameters.dir/clean
 src/clean: src/CMakeFiles/slam_estimate.dir/clean
 src/clean: src/CMakeFiles/join_point_cloud.dir/clean
@@ -117,6 +119,43 @@ src/CMakeFiles/slam_transform.dir/clean:
 
 # clean rule for target.
 clean: src/CMakeFiles/slam_transform.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/visual_odometry.dir
+
+# All Build rule for target.
+src/CMakeFiles/visual_odometry.dir/all:
+	$(MAKE) -f src/CMakeFiles/visual_odometry.dir/build.make src/CMakeFiles/visual_odometry.dir/depend
+	$(MAKE) -f src/CMakeFiles/visual_odometry.dir/build.make src/CMakeFiles/visual_odometry.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/eugene/slam/part4/build/CMakeFiles --progress-num=8,9 "Built target visual_odometry"
+.PHONY : src/CMakeFiles/visual_odometry.dir/all
+
+# Include target in all.
+all: src/CMakeFiles/visual_odometry.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/visual_odometry.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/eugene/slam/part4/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/visual_odometry.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/eugene/slam/part4/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/visual_odometry.dir/rule
+
+# Convenience name for target.
+visual_odometry: src/CMakeFiles/visual_odometry.dir/rule
+
+.PHONY : visual_odometry
+
+# clean rule for target.
+src/CMakeFiles/visual_odometry.dir/clean:
+	$(MAKE) -f src/CMakeFiles/visual_odometry.dir/build.make src/CMakeFiles/visual_odometry.dir/clean
+.PHONY : src/CMakeFiles/visual_odometry.dir/clean
+
+# clean rule for target.
+clean: src/CMakeFiles/visual_odometry.dir/clean
 
 .PHONY : clean
 
