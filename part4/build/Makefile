@@ -163,17 +163,17 @@ slam_estimate/fast:
 .PHONY : slam_estimate/fast
 
 #=============================================================================
-# Target rules for targets named join_point_cloud
+# Target rules for targets named join_pointcloud
 
 # Build rule for target.
-join_point_cloud: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 join_point_cloud
-.PHONY : join_point_cloud
+join_pointcloud: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 join_pointcloud
+.PHONY : join_pointcloud
 
 # fast build rule for target.
-join_point_cloud/fast:
-	$(MAKE) -f src/CMakeFiles/join_point_cloud.dir/build.make src/CMakeFiles/join_point_cloud.dir/build
-.PHONY : join_point_cloud/fast
+join_pointcloud/fast:
+	$(MAKE) -f src/CMakeFiles/join_pointcloud.dir/build.make src/CMakeFiles/join_pointcloud.dir/build
+.PHONY : join_pointcloud/fast
 
 # Help Target
 help:
@@ -187,7 +187,7 @@ help:
 	@echo "... visual_odometry"
 	@echo "... slam_parameters"
 	@echo "... slam_estimate"
-	@echo "... join_point_cloud"
+	@echo "... join_pointcloud"
 .PHONY : help
 
 

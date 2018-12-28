@@ -13,6 +13,11 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "DISABLE_LIBUSB_1_0"
   "DISABLE_PCAP"
   "DISABLE_PNG"
+  "vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2)"
+  "vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)"
+  "vtkRenderingCore_AUTOINIT=3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)"
+  "vtkRenderingOpenGL2_AUTOINIT=1(vtkRenderingGL2PSOpenGL2)"
+  "vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2)"
   )
 
 # The include file search paths:
@@ -20,7 +25,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
   "/usr/local/include/opencv"
   "/usr/local/include"
-  "/usr/include/vtk-5.10"
+  "/usr/local/include/vtk-7.1"
   "/usr/local/include/pcl-1.9"
   "/usr/include/eigen3"
   "/usr/include/ni"

@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../lib/libjoin_point_cloud.a  
-/usr/bin/ranlib ../../lib/libjoin_point_cloud.a

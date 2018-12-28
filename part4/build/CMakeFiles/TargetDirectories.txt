@@ -6,4 +6,4 @@
 /home/eugene/slam/part4/build/src/CMakeFiles/visual_odometry.dir
 /home/eugene/slam/part4/build/src/CMakeFiles/slam_parameters.dir
 /home/eugene/slam/part4/build/src/CMakeFiles/slam_estimate.dir
-/home/eugene/slam/part4/build/src/CMakeFiles/join_point_cloud.dir
+/home/eugene/slam/part4/build/src/CMakeFiles/join_pointcloud.dir

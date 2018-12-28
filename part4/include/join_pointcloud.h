@@ -5,11 +5,22 @@
 
 //第三方库文件
 #include <opencv/cv.hpp>
-#include <opencv2/core.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/calib3d/calib3d.hpp>
+
+#include <eigen3/Eigen/Core>
 #include <eigen3/Eigen/Geometry>
-#include <eigen3/Eigen/src/Geometry/Transform.h>
-#include <pcl-1.9/pcl/pcl_base.h>
+
+#include <pcl-1.9/pcl/filters/voxel_grid.h>
+#include <pcl-1.9/pcl/io/pcd_io.h>
+#include <pcl-1.9/pcl/point_types.h>
+#include <pcl-1.9/pcl/common/transforms.h>
 //项目内文件
+#include "slam_transform.h"
+#include "slam_estimate.h"
+#include "slam_parameters.h"
+
 
 class JoinPointcloud
 {
@@ -18,8 +29,8 @@ private:
 public:
     JoinPointcloud(/* args */);
     ~JoinPointcloud();
-    void JoinPointcloud::CombinePointcloud(const PointCloud::Ptr,const Frame&,const Eigen::Isometry3d&,PointCloud::Ptr);
-    void JoinPointcloud::ReadFrame();
-    void JoinPointcloud::CvMat2Eigen(cv::Mat&,cv::Mat&,Eigen::Isometry3d* transform);
-    double JoinPointcloud::NormDistance(cv::Mat&,cv::Mat&);
+    void CombinePointcloud(const PointCloud::Ptr,const Frame&,const Eigen::Isometry3d&,PointCloud::Ptr);
+    void ReadFrame(const int&,Frame*);
+    void CvMat2Eigen(const cv::Mat&,const cv::Mat&,Eigen::Isometry3d* transform);
+    double NormDistance(cv::Mat&,cv::Mat&);
 };

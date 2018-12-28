@@ -1,3 +1,4 @@
+#pragma once
 #include <slam_parameters.h>
 #include <slam_transform.h>
 #include <vector>

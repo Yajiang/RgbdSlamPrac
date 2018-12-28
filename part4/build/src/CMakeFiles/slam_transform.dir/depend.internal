@@ -7,6 +7,8 @@ src/CMakeFiles/slam_transform.dir/slam_transform.cpp.o
  /home/eugene/slam/part4/src/slam_transform.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
+ /usr/include/eigen3/Eigen/Dense
+ /usr/include/eigen3/Eigen/Eigenvalues
  /usr/include/eigen3/Eigen/Geometry
  /usr/include/eigen3/Eigen/Householder
  /usr/include/eigen3/Eigen/Jacobi
@@ -135,6 +137,25 @@ src/CMakeFiles/slam_transform.dir/slam_transform.cpp.o
  /usr/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h
  /usr/include/eigen3/Eigen/src/Core/util/StaticAssert.h
  /usr/include/eigen3/Eigen/src/Core/util/XprHelper.h
+ /usr/include/eigen3/Eigen/src/Eigenvalues/./ComplexSchur.h
+ /usr/include/eigen3/Eigen/src/Eigenvalues/./HessenbergDecomposition.h
+ /usr/include/eigen3/Eigen/src/Eigenvalues/./RealQZ.h
+ /usr/include/eigen3/Eigen/src/Eigenvalues/./RealSchur.h
+ /usr/include/eigen3/Eigen/src/Eigenvalues/./Tridiagonalization.h
+ /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h
+ /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h
+ /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur_MKL.h
+ /usr/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h
+ /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h
+ /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h
+ /usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h
+ /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h
+ /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h
+ /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h
+ /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur_MKL.h
+ /usr/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h
+ /usr/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver_MKL.h
+ /usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h
  /usr/include/eigen3/Eigen/src/Geometry/AlignedBox.h
  /usr/include/eigen3/Eigen/src/Geometry/AngleAxis.h
  /usr/include/eigen3/Eigen/src/Geometry/EulerAngles.h
@@ -182,10 +203,6 @@ src/CMakeFiles/slam_transform.dir/slam_transform.cpp.o
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
  /usr/local/include/opencv2/calib3d/calib3d.hpp
- /usr/local/include/opencv2/contrib/contrib.hpp
- /usr/local/include/opencv2/contrib/openfabmap.hpp
- /usr/local/include/opencv2/contrib/retina.hpp
- /usr/local/include/opencv2/core.hpp
  /usr/local/include/opencv2/core/affine.hpp
  /usr/local/include/opencv2/core/core.hpp
  /usr/local/include/opencv2/core/core_c.h
@@ -199,18 +216,7 @@ src/CMakeFiles/slam_transform.dir/slam_transform.cpp.o
  /usr/local/include/opencv2/flann/miniflann.hpp
  /usr/local/include/opencv2/highgui/highgui.hpp
  /usr/local/include/opencv2/highgui/highgui_c.h
- /usr/local/include/opencv2/imgproc/imgproc.hpp
- /usr/local/include/opencv2/imgproc/imgproc_c.h
- /usr/local/include/opencv2/imgproc/types_c.h
- /usr/local/include/opencv2/ml/ml.hpp
- /usr/local/include/opencv2/objdetect/objdetect.hpp
- /usr/local/include/opencv2/opencv.hpp
- /usr/local/include/opencv2/opencv_modules.hpp
- /usr/local/include/opencv2/photo/photo.hpp
- /usr/local/include/opencv2/photo/photo_c.h
- /usr/local/include/opencv2/video/background_segm.hpp
- /usr/local/include/opencv2/video/tracking.hpp
- /usr/local/include/opencv2/video/video.hpp
+ /usr/local/include/pcl-1.9/pcl/ModelCoefficients.h
  /usr/local/include/pcl-1.9/pcl/PCLHeader.h
  /usr/local/include/pcl-1.9/pcl/PCLImage.h
  /usr/local/include/pcl-1.9/pcl/PCLPointCloud2.h
@@ -219,16 +225,33 @@ src/CMakeFiles/slam_transform.dir/slam_transform.cpp.o
  /usr/local/include/pcl-1.9/pcl/PolygonMesh.h
  /usr/local/include/pcl-1.9/pcl/TextureMesh.h
  /usr/local/include/pcl-1.9/pcl/Vertices.h
+ /usr/local/include/pcl-1.9/pcl/cloud_iterator.h
+ /usr/local/include/pcl-1.9/pcl/common/centroid.h
+ /usr/local/include/pcl-1.9/pcl/common/common.h
  /usr/local/include/pcl-1.9/pcl/common/concatenate.h
  /usr/local/include/pcl-1.9/pcl/common/copy_point.h
+ /usr/local/include/pcl-1.9/pcl/common/eigen.h
+ /usr/local/include/pcl-1.9/pcl/common/impl/accumulators.hpp
+ /usr/local/include/pcl-1.9/pcl/common/impl/centroid.hpp
+ /usr/local/include/pcl-1.9/pcl/common/impl/common.hpp
  /usr/local/include/pcl-1.9/pcl/common/impl/copy_point.hpp
+ /usr/local/include/pcl-1.9/pcl/common/impl/eigen.hpp
  /usr/local/include/pcl-1.9/pcl/common/impl/io.hpp
+ /usr/local/include/pcl-1.9/pcl/common/impl/transforms.hpp
  /usr/local/include/pcl-1.9/pcl/common/io.h
  /usr/local/include/pcl-1.9/pcl/common/point_tests.h
+ /usr/local/include/pcl-1.9/pcl/common/transforms.h
  /usr/local/include/pcl-1.9/pcl/console/print.h
  /usr/local/include/pcl-1.9/pcl/conversions.h
+ /usr/local/include/pcl-1.9/pcl/correspondence.h
  /usr/local/include/pcl-1.9/pcl/exceptions.h
+ /usr/local/include/pcl-1.9/pcl/filters/boost.h
+ /usr/local/include/pcl-1.9/pcl/filters/filter.h
+ /usr/local/include/pcl-1.9/pcl/filters/impl/filter.hpp
+ /usr/local/include/pcl-1.9/pcl/filters/impl/voxel_grid.hpp
+ /usr/local/include/pcl-1.9/pcl/filters/voxel_grid.h
  /usr/local/include/pcl-1.9/pcl/for_each_type.h
+ /usr/local/include/pcl-1.9/pcl/impl/cloud_iterator.hpp
  /usr/local/include/pcl-1.9/pcl/impl/pcl_base.hpp
  /usr/local/include/pcl-1.9/pcl/impl/point_types.hpp
  /usr/local/include/pcl-1.9/pcl/io/boost.h

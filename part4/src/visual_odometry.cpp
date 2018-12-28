@@ -4,11 +4,17 @@
 #include <string>
 #include <iostream>
 //第三方库文件
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/calib3d/calib3d.hpp>
+
 #include <eigen3/Eigen/Core>
 #include <eigen3/Eigen/Geometry>
-#include <opencv2/opencv.hpp>
-#include <opencv2/calib3d.hpp>
+
 #include <pcl-1.9/pcl/filters/voxel_grid.h>
+#include <pcl-1.9/pcl/io/pcd_io.h>
+#include <pcl-1.9/pcl/point_types.h>
+#include <pcl-1.9/pcl/common/transforms.h>
 //项目内文件
 #include "slam_estimate.h"
 #include "slam_parameters.h"
@@ -17,9 +23,11 @@
 
 int main(int argc, char const *argv[])
 {
+    cout<<"begin"<<endl;
     // 提取特征并计算描述子
     SlamParameters slam_parameters;
     int start_index = atoi(slam_parameters.ReadData("start_index").c_str());
+    cout<<start_index<<endl;
     int end_index = atoi(slam_parameters.ReadData("end_index").c_str());
     int min_inliers = atoi(slam_parameters.ReadData("min_inliers").c_str());
     double max_distance = atof(slam_parameters.ReadData("max_distance").c_str());
@@ -42,7 +50,7 @@ int main(int argc, char const *argv[])
         }
         else
         {
-            join_pointcloud.ReadData(i, current_frame);
+            join_pointcloud.ReadFrame(i, current_frame);
             slam_estimate.ComputeKeyPointAndDescriptor(*current_frame);
             PnpResult pnp_result = slam_estimate.EstimateMotion(*prev_frame, *current_frame);
             if (pnp_result.inliers < min_inliers)
@@ -51,7 +59,7 @@ int main(int argc, char const *argv[])
                 continue;
             Eigen::Isometry3d *transform;
             join_pointcloud.CvMat2Eigen(pnp_result.rotation_vector, pnp_result.translation_vector, transform);
-            join_pointcloud.CombinePointcloud(input_cloud, current_frame, *transform, output_cloud);
+            join_pointcloud.CombinePointcloud(input_cloud, *current_frame, *transform, output_cloud);
             prev_frame = current_frame;
         }
     }

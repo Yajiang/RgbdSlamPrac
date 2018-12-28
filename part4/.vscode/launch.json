@@ -8,7 +8,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/part4/bin/visual_odometry",
+            "program": "${workspaceFolder}/bin/visual_odometry",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

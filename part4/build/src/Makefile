@@ -171,19 +171,46 @@ slam_estimate/fast:
 .PHONY : slam_estimate/fast
 
 # Convenience name for target.
-src/CMakeFiles/join_point_cloud.dir/rule:
-	cd /home/eugene/slam/part4/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/join_point_cloud.dir/rule
-.PHONY : src/CMakeFiles/join_point_cloud.dir/rule
+src/CMakeFiles/join_pointcloud.dir/rule:
+	cd /home/eugene/slam/part4/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/join_pointcloud.dir/rule
+.PHONY : src/CMakeFiles/join_pointcloud.dir/rule
 
 # Convenience name for target.
-join_point_cloud: src/CMakeFiles/join_point_cloud.dir/rule
+join_pointcloud: src/CMakeFiles/join_pointcloud.dir/rule
 
-.PHONY : join_point_cloud
+.PHONY : join_pointcloud
 
 # fast build rule for target.
-join_point_cloud/fast:
-	cd /home/eugene/slam/part4/build && $(MAKE) -f src/CMakeFiles/join_point_cloud.dir/build.make src/CMakeFiles/join_point_cloud.dir/build
-.PHONY : join_point_cloud/fast
+join_pointcloud/fast:
+	cd /home/eugene/slam/part4/build && $(MAKE) -f src/CMakeFiles/join_pointcloud.dir/build.make src/CMakeFiles/join_pointcloud.dir/build
+.PHONY : join_pointcloud/fast
+
+join_pointcloud.o: join_pointcloud.cpp.o
+
+.PHONY : join_pointcloud.o
+
+# target to build an object file
+join_pointcloud.cpp.o:
+	cd /home/eugene/slam/part4/build && $(MAKE) -f src/CMakeFiles/join_pointcloud.dir/build.make src/CMakeFiles/join_pointcloud.dir/join_pointcloud.cpp.o
+.PHONY : join_pointcloud.cpp.o
+
+join_pointcloud.i: join_pointcloud.cpp.i
+
+.PHONY : join_pointcloud.i
+
+# target to preprocess a source file
+join_pointcloud.cpp.i:
+	cd /home/eugene/slam/part4/build && $(MAKE) -f src/CMakeFiles/join_pointcloud.dir/build.make src/CMakeFiles/join_pointcloud.dir/join_pointcloud.cpp.i
+.PHONY : join_pointcloud.cpp.i
+
+join_pointcloud.s: join_pointcloud.cpp.s
+
+.PHONY : join_pointcloud.s
+
+# target to generate assembly for a file
+join_pointcloud.cpp.s:
+	cd /home/eugene/slam/part4/build && $(MAKE) -f src/CMakeFiles/join_pointcloud.dir/build.make src/CMakeFiles/join_pointcloud.dir/join_pointcloud.cpp.s
+.PHONY : join_pointcloud.cpp.s
 
 slam_estimate.o: slam_estimate.cpp.o
 
@@ -305,7 +332,10 @@ help:
 	@echo "... visual_odometry"
 	@echo "... slam_parameters"
 	@echo "... slam_estimate"
-	@echo "... join_point_cloud"
+	@echo "... join_pointcloud"
+	@echo "... join_pointcloud.o"
+	@echo "... join_pointcloud.i"
+	@echo "... join_pointcloud.s"
 	@echo "... slam_estimate.o"
 	@echo "... slam_estimate.i"
 	@echo "... slam_estimate.s"
