@@ -16,13 +16,13 @@
 #include <pcl-1.9/pcl/point_types.h>
 #include <pcl-1.9/pcl/common/transforms.h>
 //项目内文件
-
+#include "slam_transform.h"
 class SlamParameters
 {
-    public:
+  public:
     SlamParameters();
     ~SlamParameters();
-    void GetCameraParameters(cv::Mat&);
+    void GetCameraParameters(cv::Mat &);
     int GetScalingFactor();
     std::string GetDiscriptorMethod();
     std::string GetFeatureMethod();
@@ -31,8 +31,10 @@ class SlamParameters
     void InitParameters();
     void ResetParameters();
     std::string ReadData(std::string);
-    private:
+
+  private:
     cv::FileStorage fs;
+    std::string param_value_;
     std::string descriptor_extractor_;
     std::string feature_detector_;
     int good_match_threshold_;

@@ -8,16 +8,12 @@
 
 SlamEstimate::SlamEstimate()
 {
-
 }
 SlamEstimate::~SlamEstimate()
 {
-
 }
 void SlamEstimate::ComputeKeyPointAndDescriptor(Frame &frame)
 {
-    //获取匹配参数
-    SlamParameters slam_parameters;
     // 声明特征提取器与描述子提取器
     cv::Ptr<cv::FeatureDetector> feature_detector;
     cv::Ptr<cv::DescriptorExtractor> descriptor_extractor;
@@ -28,19 +24,10 @@ void SlamEstimate::ComputeKeyPointAndDescriptor(Frame &frame)
     feature_detector->detect(frame.rgb_data, frame.key_points);
     //计算描述子
     descriptor_extractor->compute(frame.rgb_data, frame.key_points, frame.descriptor);
-    // 可视化， 显示关键点
-    // cv::Mat img_show;
-    // cv::drawKeypoints(frame.rgb_data,frame.keypoints,img_show,cv::Scalar::all(-1), cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
-    // cv::imshow("keypoints", img_show);
-    // cv::imwrite("../data/keypoints.png", img_show);
-    // cv::waitKey(0); //暂停等待一个按键
     return;
 }
 PnpResult SlamEstimate::EstimateMotion(Frame &frame1, Frame &frame2)
 {
-    //获取匹配参数及相机内参
-    SlamParameters slam_parameters;
-    SlamTransform slam_transform;
     //计算两帧图像之间的匹配
     vector<cv::DMatch> matches;
     cv::FlannBasedMatcher matcher;
@@ -57,19 +44,19 @@ PnpResult SlamEstimate::EstimateMotion(Frame &frame1, Frame &frame2)
     //判断依据： 最小匹配距离 × 匹配阈值
     double match_threshold = slam_parameters.GetMatchThreshold();
     vector<cv::DMatch> good_matches;
-    cout<<"match_threshold:"<<match_threshold<<endl;
+    // cout<<"match_threshold:"<<match_threshold<<endl;
     for (size_t i = 0; i < matches.size(); i++)
     {
         if (matches.at(i).distance < min_distance * match_threshold)
             good_matches.push_back(matches.at(i));
     }
-    cout<<"good_matches:"<<good_matches.size()<<endl;
     // 计算图像间的运动关系
     // 关键函数：cv::solvePnPRansac()
     // 第一个帧的三维点
     vector<cv::Point3f> space_points;
     // 第二个帧的图像点
     vector<cv::Point2f> image_points;
+    cv::Point3f *point_space(new cv::Point3f());
 
     for (size_t i = 0; i < good_matches.size(); i++)
     {
@@ -80,26 +67,29 @@ PnpResult SlamEstimate::EstimateMotion(Frame &frame1, Frame &frame2)
         if (d == 0)
             continue;
         image_points.push_back(cv::Point2f(frame2.key_points[good_matches[i].trainIdx].pt));
-
         // 将(u,v,d)转成(x,y,z)
         cv::Point3f point_3d(point_2d.x, point_2d.y, d);
-        cv::Point3f *point_space;
         slam_transform.Point2dTo3d(point_3d, point_space);
-        cout<<"point_space"<<*point_space<<endl;
         space_points.push_back(*point_space);
     }
-    cv::Mat camera_matrix;
+    delete point_space;
+
     // 构建相机矩阵
+    cv::Mat camera_matrix;
     slam_parameters.GetCameraParameters(camera_matrix);
-    cout << "camera_matrix" << camera_matrix << endl;
     // 求解pnp
     cv::Mat inliers;
     PnpResult result;
-    cv::solvePnPRansac(space_points, image_points, camera_matrix, cv::Mat(), result.rotation_vector,result.translation_vector, false, 100, 0.1, 100,inliers);
+    int min_inliers = atoi(slam_parameters.ReadData("min_inliers").c_str());
+    if (good_matches.size() < min_inliers || space_points.size()== 0)
+    {
+        result.inliers = 0;
+        return result;
+    }
+    double min_tolerance;
+    min_tolerance = atof(slam_parameters.ReadData("min_tolerance").c_str());
+    cv::solvePnPRansac(space_points, image_points, camera_matrix, cv::Mat(), result.rotation_vector, result.translation_vector, false, 100, min_tolerance, 100, inliers);
     result.inliers = inliers.rows;
-    cout<<"inliers"<<inliers.rows<<endl;
-    cout<<"rotation_vector"<<result.rotation_vector<<endl;
-    cout<<"translation_vector"<<result.translation_vector<<endl;
     // 画出inliers匹配
     vector<cv::DMatch> matches_show;
     cv::Mat img_matches;

@@ -1,7 +1,7 @@
 #pragma once
 //C/C++系统文件
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 //第三方库文件
 using namespace std;
 #include <opencv2/core/core.hpp>
@@ -23,14 +23,15 @@ typedef pcl::PointCloud<PointT> PointCloud;
 
 class SlamTransform
 {
-    public:
+  public:
     SlamTransform();
     ~SlamTransform();
     void InitCameraParam();
-    void Point2dTo3d(const cv::Point3f&,cv::Point3f*);
-    void Point2dTo3d(cv::Mat& rgb_data,cv::Mat& depth_data,ushort,ushort,PointT&);
-    void ImageToPointCloud(const cv::Mat& rgb_data,const cv::Mat& depth_data,PointCloud::Ptr point_cloud_ptr);
-    private:
+    void Point2dTo3d(const cv::Point3f &, cv::Point3f *);
+    void Point2dTo3d(cv::Mat &rgb_data, cv::Mat &depth_data, ushort, ushort, PointT &);
+    void ImageToPointCloud(const cv::Mat &rgb_data, const cv::Mat &depth_data, PointCloud::Ptr point_cloud_ptr);
+
+  private:
     //Camera param
     double camera_factor_;
     double camera_cx_;

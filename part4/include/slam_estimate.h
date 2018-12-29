@@ -42,4 +42,8 @@ class SlamEstimate
     ~SlamEstimate();
     void ComputeKeyPointAndDescriptor(Frame &);
     PnpResult EstimateMotion(Frame &frame1, Frame &frame2);
+
+  private:
+    SlamParameters slam_parameters;
+    SlamTransform slam_transform;
 };

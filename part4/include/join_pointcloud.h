@@ -21,16 +21,19 @@
 #include "slam_estimate.h"
 #include "slam_parameters.h"
 
-
 class JoinPointcloud
 {
-private:
+  private:
     /* data */
-public:
+  public:
     JoinPointcloud(/* args */);
     ~JoinPointcloud();
-    void CombinePointcloud(const PointCloud::Ptr,const Frame&,const Eigen::Isometry3d&,PointCloud::Ptr);
-    void ReadFrame(const int&,Frame*);
-    void CvMat2Eigen(const cv::Mat&,const cv::Mat&,Eigen::Isometry3d* transform);
-    double NormDistance(cv::Mat&,cv::Mat&);
+    void CombinePointcloud(const PointCloud::Ptr, const Frame &, const Eigen::Isometry3d &, PointCloud::Ptr);
+    void ReadFrame(const int &, Frame *);
+    void CvMat2Eigen(const cv::Mat &, const cv::Mat &, Eigen::Isometry3d *transform);
+    double NormDistance(cv::Mat &, cv::Mat &);
+
+  private:
+    SlamTransform slam_transform;
+    SlamParameters slam_parameters;
 };

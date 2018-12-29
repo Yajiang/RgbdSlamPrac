@@ -10,9 +10,10 @@ camera_intrinsic_matrix: !!opencv-matrix
        2.5350000000000000e+02, 0., 0., 1. ]
 scaling_factor: 1000
 good_match_threshold: 4
-start_index: 1
-end_index: 10
-voxel_grid: 1.0000000000000000e-02
-min_good_match: 10
-min_inliers: 5
-max_norm: 2.9999999999999999e-01
+start_index: "1"
+end_index: "700"
+voxel_grid: "0.01"
+min_good_match: "10"
+min_inliers: "5"
+max_norm: "0.3"
+min_tolerance: "0.1"

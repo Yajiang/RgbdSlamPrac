@@ -356,7 +356,7 @@ USB_10_INCLUDE_DIR:PATH=/usr/include
 //Path to a library.
 USB_10_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libusb-1.0.so
 
-//The directory containing a CMake configuration file for VTK.
+//The directory containing VTKConfig.cmake
 VTK_DIR:PATH=/usr/local/lib/cmake/vtk-7.1
 
 //Dependencies for the target

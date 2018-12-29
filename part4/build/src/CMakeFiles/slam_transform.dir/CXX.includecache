@@ -27,6 +27,8 @@ pcl-1.9/pcl/point_types.h
 -
 pcl-1.9/pcl/common/transforms.h
 -
+slam_transform.h
+../include/slam_transform.h
 
 ../include/slam_transform.h
 iostream
