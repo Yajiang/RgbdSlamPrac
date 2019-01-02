@@ -73,55 +73,31 @@ int main(int argc, char const *argv[])
     {
         if (i == start_index)
         {
-            prev_index = i;
             prev_frame->id = i;
             g2o::VertexSE3 *vertex = new g2o::VertexSE3();
-            vertex->setId(prev_index);
+            vertex->setId(prev_frame.id);
             vertex->setEstimate(Eigen::Isometry3d::Identity());
             vertex->setFixed(true);
             global_optimizer.addVertex(vertex);
 
-            join_pointcloud.ReadFrame(i, prev_frame);
+            join_pointcloud.ReadFrame(prev_frame->id, prev_frame);
             slam_estimate.ComputeKeyPointAndDescriptor(*prev_frame);
-            // slam_transform.ImageToPointCloud(prev_frame->rgb_data, prev_frame->depth_data, input_cloud);
+            slam_transform.ImageToPointCloud(prev_frame->rgb_data, prev_frame->depth_data, input_cloud);
         }
         else
         {
-            current_index = i;
-            join_pointcloud.ReadFrame(i, current_frame);
+            current_frame->id = i;
+            join_pointcloud.ReadFrame(current_frame->id, current_frame);
             slam_estimate.ComputeKeyPointAndDescriptor(*current_frame);
-            PnpResult pnp_result = slam_estimate.EstimateMotion(*prev_frame, *current_frame);
-            if (pnp_result.inliers < min_inliers)
+            if (CheckKeyFrame(prev_frame, current_frame, global_optimizer) == CheckResult::KEYFRAME)
             {
-                continue;
+                join_pointcloud.CvMat2Eigen(pnp_result.rotation_vector, pnp_result.translation_vector, transform);
+                // join_pointcloud.CombinePointcloud(input_cloud, *current_frame, *transform, output_cloud);
+                swap(prev_frame, current_frame);
+                prev_index = current_index;
+                // swap(input_cloud, output_cloud);
+                // cout << "transform" << transform->matrix() << endl;
             }
-            if (join_pointcloud.NormDistance(pnp_result.rotation_vector, pnp_result.translation_vector) > max_distance)
-            {
-                continue;
-            }
-            g2o::VertexSE3 *vertex = new g2o::VertexSE3();
-            vertex->setId(current_index);
-            vertex->setEstimate(Eigen::Isometry3d::Identity());
-            global_optimizer.addVertex(vertex);
-
-            g2o::EdgeSE3 *edge = new g2o::EdgeSE3();
-            edge->vertices()[0] = global_optimizer.vertex(prev_index);
-            edge->vertices()[1] = global_optimizer.vertex(current_index);
-
-            join_pointcloud.CvMat2Eigen(pnp_result.rotation_vector, pnp_result.translation_vector, transform);
-
-            Eigen::Matrix<double, 6, 6> information_matrix = Eigen::Matrix<double, 6, 6>::Identity();
-            information_matrix(0, 0) = information_matrix(1, 1) = information_matrix(2, 2) = 10;
-            information_matrix(3, 3) = information_matrix(3, 3) = information_matrix(3, 3) = 10;
-            edge->setInformation(information_matrix);
-            edge->setMeasurement(*transform);
-            global_optimizer.addEdge(edge);
-
-            // join_pointcloud.CombinePointcloud(input_cloud, *current_frame, *transform, output_cloud);
-            swap(prev_frame, current_frame);
-            prev_index = current_index;
-            // swap(input_cloud, output_cloud);
-            // cout << "transform" << transform->matrix() << endl;
         }
 
         // viewer.showCloud(input_cloud);
@@ -148,7 +124,7 @@ enum class CheckResult
     KEYFRAME,
 };
 
-CheckResult CheckKeyFrame(const Frame& frame1, const Frame &frame2, g2o::SparseOptimizer &sparse_optimizer)
+CheckResult CheckKeyFrame(const Frame &frame1, const Frame &frame2, g2o::SparseOptimizer &sparse_optimizer)
 {
     //读取参数
     SlamParameters slam_parameters;
@@ -162,8 +138,8 @@ CheckResult CheckKeyFrame(const Frame& frame1, const Frame &frame2, g2o::SparseO
 
     slam_estimate.ComputeKeyPointAndDescriptor(frame1);
     slam_estimate.ComputeKeyPointAndDescriptor(frame2);
-    PnpResult pnp_result = slam_estimate.EstimateMotion(frame1,frame2);
-    if(is_loops == false)
+    PnpResult pnp_result = slam_estimate.EstimateMotion(frame1, frame2);
+    if (is_loops == false)
     {
     }
     if (join_pointcloud.NormDistance(pnp_result.rotation_vector, pnp_result.translation_vector) > max_distance)
