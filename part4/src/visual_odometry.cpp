@@ -15,6 +15,7 @@
 #include <pcl-1.9/pcl/io/pcd_io.h>
 #include <pcl-1.9/pcl/point_types.h>
 #include <pcl-1.9/pcl/common/transforms.h>
+#include <pcl-1.9/pcl/visualization/cloud_viewer.h>
 //项目内文件
 #include "slam_estimate.h"
 #include "slam_parameters.h"
@@ -41,6 +42,8 @@ int main(int argc, char const *argv[])
     Eigen::Isometry3d *transform(new Eigen::Isometry3d());
 
     SlamTransform slam_transform;
+    pcl::visualization::CloudViewer viewer("viewer");
+    bool flag = false;
     for (int i = start_index; i != end_index; i++)
     {
         if (i == start_index)
@@ -55,15 +58,23 @@ int main(int argc, char const *argv[])
             slam_estimate.ComputeKeyPointAndDescriptor(*current_frame);
             PnpResult pnp_result = slam_estimate.EstimateMotion(*prev_frame, *current_frame);
             if (pnp_result.inliers < min_inliers)
+            {
+                flag = false;
                 continue;
+            }
             if (join_pointcloud.NormDistance(pnp_result.rotation_vector, pnp_result.translation_vector) > max_distance)
+            {
+                flag = false;
                 continue;
+            }
             join_pointcloud.CvMat2Eigen(pnp_result.rotation_vector, pnp_result.translation_vector, transform);
             join_pointcloud.CombinePointcloud(input_cloud, *current_frame, *transform, output_cloud);
+            flag = true;
             swap(prev_frame, current_frame);
             swap(input_cloud, output_cloud);
             // cout << "transform" << transform->matrix() << endl;
         }
+        viewer.showCloud(input_cloud);
     }
     delete prev_frame;
     delete current_frame;

@@ -81,7 +81,8 @@ PnpResult SlamEstimate::EstimateMotion(Frame &frame1, Frame &frame2)
     cv::Mat inliers;
     PnpResult result;
     int min_inliers = atoi(slam_parameters.ReadData("min_inliers").c_str());
-    if (good_matches.size() < min_inliers || space_points.size()== 0)
+    int min_good_match = atoi(slam_parameters.ReadData("min_good_match").c_str());
+    if (good_matches.size() < min_good_match || space_points.size()== 0)
     {
         result.inliers = 0;
         return result;
